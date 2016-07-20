@@ -17,6 +17,9 @@
         <div style="width:400px; height:400px;">
             <canvas id="usage_chart" class="usage_chart" width="200" height="200"></canvas>
         </div>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+
     </body>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/Charts.js"></script>
@@ -24,6 +27,7 @@
     <script type="text/javascript" src="js/ClassNames.js"></script>
     <script type="text/javascript" src="js/URLUtilities.js"></script>
     <script type="text/javascript" src="js/HistoryManager.js"></script>
+    <script type="text/javascript" src="js/FbLoginManager.js"></script>
     <script type="text/javascript" src="js/Main.js"></script>
 
 </html>

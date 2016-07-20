@@ -10,9 +10,24 @@
    "default_popup": "popup.html"
   },
 
+  "chrome_url_overrides" : {
+    "newtab": "popup.html"
+  },
+
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+
   "permissions": [
    "activeTab",
    "storage",
-   "history"
-   ]
+   "history",
+   "contextMenus"
+   ],
+
+  "background": {
+    "page": "background.html"
+  }
 }
