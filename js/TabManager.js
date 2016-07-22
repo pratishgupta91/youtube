@@ -7,12 +7,14 @@ TabManager.prototype.Init = function() {
     this.tabs = [];
 };
 
-TabManager.prototype.GetAllSavedTabs = function() {
-    return this.tabs;
+TabManager.prototype.GetAllSavedTabs = function(callback) {
+    ChromeHelper.RetrieveTabs (function(items) {
+        callback(items.tabs);
+        return;
+    });
 };
 
 TabManager.prototype.SaveTab = function(tab) {
-    this.tabs.push(tab);
+    ChromeHelper.StoreTabAt(0, tab);
 };
-
 
