@@ -24,10 +24,16 @@
    "activeTab",
    "storage",
    "history",
-   "contextMenus"
+   "bookmarks",
+   "contextMenus",
+   "*://*/*"
    ],
 
   "background": {
     "page": "background.html"
   }
+  // "content_scripts": [{
+  //   "matches": ["http://*/*", "https://*/*"],
+  //   "js": ["content.js"]
+  // }]
 }

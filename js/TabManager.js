@@ -14,7 +14,13 @@ TabManager.prototype.GetAllSavedTabs = function(callback) {
     });
 };
 
-TabManager.prototype.SaveTab = function(tab) {
-    ChromeHelper.StoreTabAt(0, tab);
+TabManager.prototype.SaveTab = function(tab, callback) {
+    ChromeHelper.StoreTabAt(0 /* index */, tab, callback);
 };
+
+TabManager.prototype.RemoveTabAt = function(index) {
+    ChromeHelper.RemoveTabAt(index);
+};
+
+
 

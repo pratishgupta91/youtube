@@ -1,35 +1,69 @@
-<!DOCTYPE html>
-<html class="full" lang="en">
-<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+    <!DOCTYPE html>
+    <html class="full" lang="en">
+    <!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
 
-    <head>
+        <head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="">
+            <meta name="author" content="">
 
-        <title>New Tab</title>
+            <title>New Tab</title>
 
-    </head>
+        <!-- Owl Carousel Assets -->
+            <link href="slider/owl-carousel/owl.carousel.css" rel="stylesheet">
+            <link href="slider/owl-carousel/owl.theme.css" rel="stylesheet">
+            <link href="slider/owl-carousel/owl.transitions.css" rel="stylesheet">
 
-    <body>
-        <!-- <div style="width:400px; height:400px;">
-            <canvas id="usage_chart" class="usage_chart" width="200" height="200"></canvas>
-        </div> -->
-        <div class='saved_tabs'>
-        </div>
+            <link rel="stylesheet" type="text/css" href="css/item.css">
+            <link rel="stylesheet" type="text/css" href="css/popup.css">
 
-    </body>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/Charts.js"></script>
-    <script type="text/javascript" src="js/ChartManager.js"></script>
-    <script type="text/javascript" src="js/ClassNames.js"></script>
-    <script type="text/javascript" src="js/URLUtilities.js"></script>
-    <script type="text/javascript" src="js/HistoryManager.js"></script>
-    <script type="text/javascript" src="js/TabHelper.js"></script>
-    <script type="text/javascript" src="js/TabManager.js"></script>
-    <script type="text/javascript" src="js/ChromeHelper.js"></script>
-    <script type="text/javascript" src="js/Main.js"></script>
+        </head>
 
-</html>
+        <body>
+
+            <div id="owl-demo" class="owl-carousel" style="width:300px;">
+              <div><img src="img/slider1.jpg"></div>
+              <div><img src="img/slider2.jpg"></div>
+              <div><img src="img/slider1.jpg"></div>
+              <div><img src="img/slider2.jpg"></div>
+            </div>
+
+           <!--  <div class="ext-info">
+                <span>TurtleTab</span>
+            </div> -->
+            <div class="toolbar">
+                <div class="show-chart">
+                    <img src=../img/chart.png height="20px" width="20px">
+                </div>
+            </div>
+            <div style="width:300px; height:0px;" class="chart-layout">
+                <canvas id="usage_chart" class="usage_chart" width="200" height="80" ></canvas>
+            </div>
+            <div class='popup-canvas'>
+                <div class="chart-layout">
+                </div>
+                <div class='container'>
+                    <ul class='item-layout'>
+                    </ul>
+                </div>
+            </div>
+
+        </body>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/Charts.js"></script>
+        <script type="text/javascript" src="js/ChartManager.js"></script>
+        <script type="text/javascript" src="js/ClassNames.js"></script>
+        <script type="text/javascript" src="js/URLUtilities.js"></script>
+        <script type="text/javascript" src="js/HistoryManager.js"></script>
+        <script type="text/javascript" src="js/TabHelper.js"></script>
+        <script type="text/javascript" src="js/TabManager.js"></script>
+        <script type="text/javascript" src="js/ChromeHelper.js"></script>
+        <script type="text/javascript" src="js/UIItemManager.js"></script>
+        <script type="text/javascript" src="js/SliderManager.js"></script>
+        <script src="slider/owl-carousel/owl.carousel.js"></script>
+        <script type="text/javascript" src="js/Main.js"></script>
+
+
+    </html>

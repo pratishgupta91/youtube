@@ -1,11 +1,14 @@
 function DrawBarChart(items, chartElem) {
-	// items map
+	//items map
 	var itemLabels = new Array();
 	var itemCounts = new Array();
 
 	for(var i = 0; i < items.length && i < 7; i++) {
-		itemLabels.push(items[i][0]);
-		itemCounts.push(items[i][1]);
+
+		itemLabels.push(i + 1);
+		var timeElapsed = (new Date).getTime() - items[i].time;
+		var timeLeft = TabValidityTime - timeElapsed;
+		itemCounts.push(timeLeft / (3600000));
 	}
 
 	var myChart = new Chart(chartElem, {
