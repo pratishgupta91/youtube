@@ -11,7 +11,7 @@
 
             <title>New Tab</title>
 
-        <!-- Owl Carousel Assets -->
+            <!-- Owl Carousel Assets -->
             <link href="slider/owl-carousel/owl.carousel.css" rel="stylesheet">
             <link href="slider/owl-carousel/owl.theme.css" rel="stylesheet">
             <link href="slider/owl-carousel/owl.transitions.css" rel="stylesheet">
@@ -22,34 +22,28 @@
         </head>
 
         <body>
+        
+            <!-- Landing view -->
+            <div class='landing-view'></div>  
 
-            <div id="owl-demo" class="owl-carousel" style="width:300px;">
-              <div><img src="img/slider1.jpg"></div>
-              <div><img src="img/slider2.jpg"></div>
-              <div><img src="img/slider1.jpg"></div>
-              <div><img src="img/slider2.jpg"></div>
-            </div>
-
-           <!--  <div class="ext-info">
-                <span>TurtleTab</span>
-            </div> -->
-            <div class="toolbar">
-                <div class="show-chart">
-                    <img src=../img/chart.png height="20px" width="20px">
+            <div class="tab-view">
+                <div class="toolbar">
+                    <div class="show-chart">
+                        <img src=../img/chart.png height="20px" width="20px">
+                    </div>
+                </div>
+                <div style="width:300px; height:0px;" class="chart-layout">
+                    <canvas id="usage_chart" class="usage_chart" width="200" height="80" ></canvas>
+                </div>
+                <div class='popup-canvas'>
+                    <div class="chart-layout">
+                    </div>
+                    <div class='container'>
+                        <ul class='item-layout'>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div style="width:300px; height:0px;" class="chart-layout">
-                <canvas id="usage_chart" class="usage_chart" width="200" height="80" ></canvas>
-            </div>
-            <div class='popup-canvas'>
-                <div class="chart-layout">
-                </div>
-                <div class='container'>
-                    <ul class='item-layout'>
-                    </ul>
-                </div>
-            </div>
-
         </body>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/Charts.js"></script>
@@ -60,6 +54,9 @@
         <script type="text/javascript" src="js/TabHelper.js"></script>
         <script type="text/javascript" src="js/TabManager.js"></script>
         <script type="text/javascript" src="js/ChromeHelper.js"></script>
+        <script type="text/javascript" src="js/ViewManager.js"></script>
+        <script type="text/javascript" src="js/TabViewManager.js"></script>
+        <script type="text/javascript" src="js/UserInfoManager.js"></script>
         <script type="text/javascript" src="js/UIItemManager.js"></script>
         <script type="text/javascript" src="js/SliderManager.js"></script>
         <script src="slider/owl-carousel/owl.carousel.js"></script>

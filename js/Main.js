@@ -1,12 +1,23 @@
 $(document).ready(function() {
-    var tabManager = new TabManager();
-    tabManager.GetAllSavedTabs(function(tabs) {
-        var len = tabs.length;
-        for(var i = 0; i < tabs.length && i < 5; i++) {
-        	ItemManager.CreateItemAndAddToLayout(tabs[i]);
-        	ItemManager.UpdateItemProgress(tabs[i], i);
+    UserInfoManager.IsLandingPageVisited(function(isVisited) {
+        // If landing page is visited, then don't show this to user
+        if(isVisited) {
+            if(!ViewManager.IsTabViewVisible) {
+                ViewManager.HideLandingView();
+                ViewManager.ShowTabView();
+            }
+            ViewManager.UpdateTabView();
         }
-        DrawBarChart(tabs, GetElement(ChartItem));
-        SliderManager.Activate();
-    });
+
+        // If landing page is not visited, don't show saved tabs.
+        else {
+            ViewManager.ShowLandingView();
+            ViewManager.HideTabView();
+            GetElement(GetStartedButton).click(function() {
+                UserInfoManager.LandingPageVisited();
+                ViewManager.HideLandingView();
+                ViewManager.ShowTabView();
+            });
+        }
+    })
 });

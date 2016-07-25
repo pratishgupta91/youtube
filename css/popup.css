@@ -4,6 +4,25 @@
      box-sizing: border-box; 
 }
 
+.get-started-btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 19px;
+  background: #2698B7;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 15px;
+  width: 300px;
+}
+
+.get-started-btn:hover {
+  background: #094870;
+  text-decoration: none;
+}
+
 .toolbar {
 	width: 300px;
 	height: 20px;

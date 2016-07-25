@@ -57,5 +57,15 @@ ChromeHelper.StoreBookmarkFolderId = function(id) {
 ChromeHelper.RetrieveBookmarkFolderId = function(callback) {
 	ChromeHelper.RetrieveItems(BookmarkId, function(items) {
 		callback(items);
-	})
+	});
 };
+
+ChromeHelper.StoreLandingPageStatus = function(isVisited) {
+	chrome.storage.sync.set({LandingPageStatus : isVisited});
+}
+
+ChromeHelper.RetrieveLandingPageStatus = function(callback) {
+	ChromeHelper.RetrieveItems(LandingPageStatus, function(items) {
+		callback(items);
+	});
+}
