@@ -26,3 +26,7 @@ ViewManager.HideTabView = function() {
 ViewManager.IsTabViewVisible = function () {
     return TabViewManager.IsTabViewVisible();
 }
+
+ViewManager.HandleHelpView = function() {
+    UserInfoManager.ShowHelpView();
+}

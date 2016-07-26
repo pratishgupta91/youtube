@@ -33,14 +33,14 @@ ItemManager.UpdateItemProgress = function(tab, index) {
     ratioElapsed = (elapsedTime) / (TabValidityTime);
     var progressWidth = listItemWidth * ratioElapsed;
 
-    listItemElemOverlay.css({'height': listItemHeight+"px" });
+    //listItemElemOverlay.css({'height': listItemHeight+"px" });
     listItemElemOverlay.css({'width': progressWidth+"px" });
 }
 
 ItemManager.CreateItemAndAddToLayout = function(tab) {
     // Script to generate item
     var script = "<li class='item-container'>";
-    script += "<div class='item' style='background-color:" + tab.color + "'>";
+    script += "<div class='item'>";
     script += "<div class='item-top-bar'>";
     script += "<div class='item-url ellipsis'>" + tab.url + "</div>";
     script += "<img class='item-logo' src='" + tab.icon + "'>";

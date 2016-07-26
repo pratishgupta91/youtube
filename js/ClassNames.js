@@ -21,3 +21,4 @@ var ChartItem     		=   ".usage_chart"
 var LandingView 		=   ".landing-view";
 var TabView 			=   ".tab-view";
 var GetStartedButton 	=   ".get-started-btn";
+var HelpView 	        =   ".help-view";

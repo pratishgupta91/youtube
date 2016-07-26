@@ -5,10 +5,8 @@
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
 .ext-info {
-	font-family: 'Indie Flower', cursive;
 	width: 300px;
 	height: 250px;
 	background-color: #40E0D0;
@@ -23,6 +21,7 @@ span {
 	line-height: normal;
 	font-size: 35px;
 }
+
 .item-container {
 	margin-top : 10px;
 	position: relative;
@@ -37,17 +36,29 @@ span {
 	display: block;
 	padding: 10px;
 	box-shadow: 1px 1px 1px #888888;
+	background-color: #ffffff;
+}
+
+.item:hover {
+	background: #FAF5F5;
+  	text-decoration: none;
+  	cursor: pointer; 
 }
 
 .item-overlay {
 	width: 100px;
-	height: 30px;
+	height: 3px;
 	background-color: black;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 1;
 	opacity: 0.3;
+}
+
+.item-overlay:hover {
+	background-color: #8000FF;
+	height: 4px;
 }
 
 .item-top-bar {

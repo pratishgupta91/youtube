@@ -50,6 +50,21 @@ ChromeHelper.RemoveTabAt = function(index) {
 	});
 };
 
+ChromeHelper.RemoveDeadTabs = function(callback) {
+	this.RetrieveTabs(function(items) {
+		var deadTabs = [];
+		if (items && items.tabs) {
+			for(var i = 0; i < items.tabs.length; i++) {
+				if((new Date).getTime() - items.tabs[i].time > TabValidityTime) {
+					deadTabs.push(tabs[i]);
+					ChromeHelper.RemoveTabAt(i);
+				}
+			}
+		}
+		callback(deadTabs);
+	});
+};
+
 ChromeHelper.StoreBookmarkFolderId = function(id) {
 	chrome.storage.sync.set({BookmarkId : id});
 };
