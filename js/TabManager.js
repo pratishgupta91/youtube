@@ -8,8 +8,8 @@ TabManager.prototype.Init = function() {
 };
 
 TabManager.prototype.GetAllSavedTabs = function(callback) {
-    ChromeHelper.RetrieveTabs (function(items) {
-        callback(items.tabs);
+    ChromeHelper.RetrieveTabs (function(savedTabs) {
+        callback(savedTabs);
         return;
     });
 };

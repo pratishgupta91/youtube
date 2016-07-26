@@ -3,24 +3,31 @@ function ViewManager() {
 }
 
 ViewManager.ShowLandingView = function() {
-	UserInfoManager.ShowLandingView();
+    UserInfoManager.ShowLandingView();
 }
 
 ViewManager.HideLandingView = function() {
-	UserInfoManager.HideLandingView();
+    UserInfoManager.HideLandingView();
 }
 
 ViewManager.UpdateTabView = function() {
-    TabViewManager.UpdateTabView();
+    TabViewManager.UpdateTabView(function(tabCount) {
+        if(tabCount == 0) {
+            UserInfoManager.ShowDummyItem();
+        }
+        else {
+            UserInfoManager.HideDummyItem();
+        }
+    });
 }
 
 ViewManager.ShowTabView = function() {
-	TabViewManager.ShowTabView();
-	ViewManager.UpdateTabView();
+    TabViewManager.ShowTabView();
+    ViewManager.UpdateTabView();
 }
 
 ViewManager.HideTabView = function() {
-	TabViewManager.HideTabView();
+    TabViewManager.HideTabView();
 }
 
 ViewManager.IsTabViewVisible = function () {

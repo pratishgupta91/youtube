@@ -41,7 +41,7 @@ TabViewManager.IsTabViewVisible = function() {
     return false;
 }
 
-TabViewManager.UpdateTabView = function() {
+TabViewManager.UpdateTabView = function(callback) {
     var tabManager = new TabManager();
 
     // Remove all dead tabs and add them to bookmark        
@@ -51,11 +51,15 @@ TabViewManager.UpdateTabView = function() {
         }
 
         tabManager.GetAllSavedTabs(function(tabs) {
-            var len = tabs.length;
-            for(var i = 0; i < tabs.length && i < 5; i++) {
-                ItemManager.CreateItemAndAddToLayout(tabs[i]);
-                ItemManager.UpdateItemProgress(tabs[i], i);
+            var len = 0;
+            if(tabs) {
+                len = tabs.length;
+                for(var i = 0; i < tabs.length && i < 5; i++) {
+                    ItemManager.CreateItemAndAddToLayout(tabs[i]);
+                    ItemManager.UpdateItemProgress(tabs[i], i);
+                }
             }
+            callback(len);
         });
     });
 }

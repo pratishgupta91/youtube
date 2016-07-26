@@ -25,9 +25,9 @@
 }
 
 .got-it-band {
-	width: 100%;
-	display: block;
-	height: 30px;
+    width: 100%;
+    display: block;
+    height: 30px;
 }
 
 .got-it-btn {
@@ -53,52 +53,63 @@
 }
 
 body {
-	background-color: #E3D5D5;
+    background-color: #E3D5D5;
 }
 
 .user-info {
-	font-family: 'Roboto', sans-serif;
-	width: 300px;
-	height: auto;
-	background: #4740DB;
-	color: white;
-	padding: 10px;
-	font-size: 11px;
-	border-radius: 3px;
-	font-weight: 300; 
-	display: block;
-	line-height: 17px;
+    font-family: 'Roboto', sans-serif;
+    width: 300px;
+    height: auto;
+    min-height: 0px;
+    background: #4740DB;
+    color: white;
+    padding: 10px;
+    font-size: 11px;
+    border-radius: 3px;
+    font-weight: 300; 
+    display: block;
+    line-height: 17px;
 }
 
 .toolbar {
-	width: 300px;
-	height: 20px;
-	display: block;
+    width: 300px;
+    height: 20px;
+    display: block;
 }
 
 .show-chart {
-	float: right;
-	width: 20px;
-	height: 20px;
+    float: right;
+    width: 20px;
+    height: 20px;
 }
 .popup-canvas {
-	width: 300px;
-	height: auto;
+    width: 300px;
+    height: auto;
 }
 
 .item-layout {
-	margin-top: 10px;
-	width: 300px;
-	min-height: 70px;
-	max-height: 1000px;
-	padding: 0px;
+    margin-top: 5px;
+    width: 300px;
+    max-height: 900px;
+    padding: 0px;
 }
 
 .chart-layout {
-	padding: 3px;
-	visibility: hidden;
+    padding: 3px;
+    visibility: hidden;
 }
 
 .usage_chart {
-	visibility: hidden;
+    visibility: hidden;
+}
+
+.dummy-tab {
+    width: 300px;
+    height: 80px;
+    background-color: #E3D5D5;
+    line-height:80px;
+    text-align: center;
+    font-size: 13px;
+    color: #787E80;
+    font-family: 'Roboto', sans-serif;
 }

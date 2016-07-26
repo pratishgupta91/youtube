@@ -52,4 +52,6 @@ ItemManager.CreateItemAndAddToLayout = function(tab) {
     // Set custom dynamic CSS to the item added
     var layoutElem = GetElement(ItemLayout);
     layoutElem.append(script);
+
+    
 };

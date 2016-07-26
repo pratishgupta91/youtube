@@ -16,21 +16,28 @@ ChromeHelper.RetrieveItems = function(data, callback) {
 };
 
 ChromeHelper.RetrieveTabs = function(callback) {
-	this.RetrieveItems(tabs, callback);
+	this.RetrieveItems(tabs, function(items) {
+		if(items && items.tabs) {
+			callback(items.tabs);
+		}
+		else {
+			callback(null);
+		}
+	});
 };
 
 ChromeHelper.StoreTabAt = function(index, tab, callback) {
-	this.RetrieveTabs(function(items) {
-		if (items && items.tabs) {
-			items.tabs.splice(index, 0, tab);
-			chrome.storage.sync.set({tabs : items.tabs});
+	this.RetrieveTabs(function(savedTabs) {
+		if (savedTabs) {
+			savedTabs.splice(index, 0, tab);
+			chrome.storage.sync.set({tabs : savedTabs});
 			var isExcessTag = false;
 
 			// If tab count exceeds maximum storage remove the LRU tag from storage
-			if(items.tabs.length > MaxTabCount) {
+			if(savedTabs.length > MaxTabCount) {
 				isExcessTag = true;
 			}
-			isExcessTag ? callback(MaxTabCount, items.tabs[MaxTabCount - 1]): callback(-1, null);
+			isExcessTag ? callback(MaxTabCount, savedTabs[MaxTabCount - 1]): callback(-1, null);
 		}
 		else {	
 			firstTab = [];
@@ -42,21 +49,21 @@ ChromeHelper.StoreTabAt = function(index, tab, callback) {
 };
 
 ChromeHelper.RemoveTabAt = function(index) {
-	this.RetrieveTabs(function(items) {
-		if (items) {
-			items.tabs.splice(index, 1 /* count of items to be deleted at index */);
-			chrome.storage.sync.set({tabs : items.tabs});
+	this.RetrieveTabs(function(savedTabs) {
+		if (savedTabs) {
+			savedTabs.splice(index, 1 /* count of items to be deleted at index */);
+			chrome.storage.sync.set({tabs : savedTabs});
 		}
 	});
 };
 
 ChromeHelper.RemoveDeadTabs = function(callback) {
-	this.RetrieveTabs(function(items) {
+	this.RetrieveTabs(function(savedTabs) {
 		var deadTabs = [];
-		if (items && items.tabs) {
-			for(var i = 0; i < items.tabs.length; i++) {
-				if((new Date).getTime() - items.tabs[i].time > TabValidityTime) {
-					deadTabs.push(tabs[i]);
+		if (savedTabs) {
+			for(var i = 0; i < savedTabs.length; i++) {
+				if((new Date).getTime() - savedTabs[i].time > TabValidityTime) {
+					deadTabs.push(savedTabs[i]);
 					ChromeHelper.RemoveTabAt(i);
 				}
 			}
@@ -82,5 +89,20 @@ ChromeHelper.StoreLandingPageStatus = function(isVisited) {
 ChromeHelper.RetrieveLandingPageStatus = function(callback) {
 	ChromeHelper.RetrieveItems(LandingPageStatus, function(items) {
 		callback(items);
+	});
+}
+
+ChromeHelper.StoreHelpTextVersion = function(version) {
+	chrome.storage.sync.set({HelpTextVersion : version});
+}
+
+ChromeHelper.RetrieveHelpTextVersion = function(callback) {
+	ChromeHelper.RetrieveItems(HelpTextVersion, function(items) {
+		if(items && items.HelpTextVersion) {
+			callback(items.HelpTextVersion);
+		}
+		else {
+			callback(0);
+		}
 	});
 }
