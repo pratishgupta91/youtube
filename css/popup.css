@@ -85,12 +85,14 @@ body {
 .popup-canvas {
     width: 300px;
     height: auto;
+    min-height: 0px;
 }
 
 .item-layout {
     margin-top: 5px;
     width: 300px;
     max-height: 900px;
+    min-height: 0px;
     padding: 0px;
 }
 
@@ -104,12 +106,13 @@ body {
 }
 
 .dummy-tab {
+	margin-top: 10px;
     width: 300px;
     height: 80px;
-    background-color: #E3D5D5;
+    background-color: #ffffff;
     line-height:80px;
     text-align: center;
-    font-size: 13px;
+    font-size: 11px;
     color: #787E80;
     font-family: 'Roboto', sans-serif;
 }

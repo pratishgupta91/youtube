@@ -26,3 +26,4 @@ var HelpView            =   ".help-view";
 var GotItBtn            =   ".got-it-btn";
 var DummyTab            =   ".dummy-tab";
 var UserInfo            =   ".user-info";
+var DummyView           =   ".dummy-view";

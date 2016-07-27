@@ -91,7 +91,7 @@ UserInfoManager.ShowHelpView = function() {
             helpView.append(script);
             GetElement(GotItBtn).click(function() {
                 ChromeHelper.StoreHelpTextVersion(curVersion);
-                GetElement(UserInfo).empty();
+                GetElement(helpView).empty();
             });
         }
     })
@@ -110,9 +110,9 @@ UserInfoManager.HideHelpView = function() {
 }
 
 UserInfoManager.ShowDummyItem = function() {
-    GetElement(HelpView).append(UserInfoManager.GetDummyItemScript("NO TABS SAVED YET"));
+    GetElement(DummyView).append(UserInfoManager.GetDummyItemScript("NO TABS SAVED YET"));
 };
 
 UserInfoManager.HideDummyItem = function() {
-    GetElement(DummyTab).empty();
+    GetElement(DummyView).empty();
 };
