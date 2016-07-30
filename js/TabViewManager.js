@@ -57,6 +57,7 @@ TabViewManager.UpdateTabView = function(callback) {
                 for(var i = 0; i < tabs.length && i < 5; i++) {
                     ItemManager.CreateItemAndAddToLayout(tabs[i]);
                     ItemManager.UpdateItemProgress(tabs[i], i);
+                    ItemManager.StyleItemTool(tabs[i], i);
                 }
             }
             callback(len);

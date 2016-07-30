@@ -37,6 +37,14 @@ ItemManager.UpdateItemProgress = function(tab, index) {
     listItemElemOverlay.css({'width': progressWidth+"px" });
 }
 
+ItemManager.StyleItemTool = function(tab, index) {
+    var listItemTool = GetElement(ItemToolsOverlay).eq(index);
+    var listItemElem = GetElement(Item).eq(index);
+    var listItemHeight = listItemElem.outerHeight();
+
+    listItemTool.css({'height': listItemHeight+"px" });
+}
+
 ItemManager.CreateItemAndAddToLayout = function(tab) {
     // Script to generate item
     var script = "<li class='item-container'>";
@@ -47,11 +55,10 @@ ItemManager.CreateItemAndAddToLayout = function(tab) {
     script += "</div>";
     script += "<div class='item-bottom-bar'>";
     script += "<div class='item-title'>" + tab.title + "</div></div></div>";
-    script += "<div class='item-overlay'></div></li>";
+    script += "<div class='item-overlay'></div>";
+    script += "<div class='item-tools-overlay'></div></li>";
 
     // Set custom dynamic CSS to the item added
     var layoutElem = GetElement(ItemLayout);
     layoutElem.append(script);
-
-    
 };

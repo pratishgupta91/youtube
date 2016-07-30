@@ -17,6 +17,7 @@ var HistoryCanvas       =   ".history_canvas";
 var UsageChart          =   ".usage_chart";
 var ItemLayout          =   ".item-layout";
 var ItemOverlay         =   ".item-overlay";
+var ItemToolsOverlay    =   ".item-tools-overlay";
 var Item                =   ".item";
 var ChartItem           =   ".usage_chart"
 var LandingView         =   ".landing-view";
