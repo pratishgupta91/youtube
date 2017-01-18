@@ -1,39 +1,28 @@
 function ViewManager() {
-
+    var videoQueueManager;
 }
 
-ViewManager.ShowLandingView = function() {
-    UserInfoManager.ShowLandingView();
+ViewManager.prototype.init = function() {
+    this.videoQueueManager = new VideoQueueManager();
+};
+
+ViewManager.prototype.createContainerScript = function() {
+    var script = "<div class='q_container'>Hello</div>";
+    return script;
+};
+
+ViewManager.prototype.createVideoBoxScript = function(video) {
+    var script = "<div class='video-box'>";
+    script += "<img class='video-box-img' src='"+ video.thumbnail +"'>";
+    script += "<div class='video-box-title'><a href='" + video.url + "'>" + video.title + "</a></div>";
+    script += "</div>";
+    return script;
+};
+
+ViewManager.prototype.addVideoToQueue = function(video) {
+    $(".q_container").append(this.createVideoBoxScript(video));
 }
 
-ViewManager.HideLandingView = function() {
-    UserInfoManager.HideLandingView();
-}
-
-ViewManager.UpdateTabView = function() {
-    TabViewManager.UpdateTabView(function(tabCount) {
-        if(tabCount == 0) {
-            UserInfoManager.ShowDummyItem();
-        }
-        else {
-            UserInfoManager.HideDummyItem();
-        }
-    });
-}
-
-ViewManager.ShowTabView = function() {
-    TabViewManager.ShowTabView();
-    ViewManager.UpdateTabView();
-}
-
-ViewManager.HideTabView = function() {
-    TabViewManager.HideTabView();
-}
-
-ViewManager.IsTabViewVisible = function () {
-    return TabViewManager.IsTabViewVisible();
-}
-
-ViewManager.HandleHelpView = function() {
-    UserInfoManager.ShowHelpView();
+ViewManager.prototype.removeAllVideos = function() {
+    $(".q_container").empty();
 }

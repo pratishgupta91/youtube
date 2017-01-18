@@ -26,14 +26,20 @@
    "history",
    "bookmarks",
    "contextMenus",
-   "*://*/*"
+   "tabs"
    ],
 
+  // "background": {
+  //   "page": "background.html"
+  // },
+
   "background": {
-    "page": "background.html"
-  }
-  // "content_scripts": [{
-  //   "matches": ["http://*/*", "https://*/*"],
-  //   "js": ["content.js"]
-  // }]
+      "page": "background.html"
+  },
+
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*"],
+    "css": ["css/inject.css"],
+    "js": ["js/jquery.js", "js/videoqueuehelper.js", "js/viewmanager.js", "content.js"]
+  }]
 }
