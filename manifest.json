@@ -38,6 +38,7 @@
   },
 
   "content_scripts": [{
+    "run_at": "document_end",
     "matches": ["https://www.youtube.com/*"],
     "css": ["css/inject.css"],
     "js": ["js/jquery.js", "js/videoqueuehelper.js", "js/viewmanager.js", "content.js"]

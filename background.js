@@ -73,8 +73,14 @@ chrome.tabs.onUpdated.addListener(function (tabId, info, tab) {
 // Listening to video end event
 chrome.runtime.onMessage.addListener(function(request, sender) {
     if(request.operation == 'ended') {
+        console.log("ENDED event captured in background")
+
         var url = sender.tab.url;
         var tabId = sender.tab.id;
+
+        console.log(url);
+        console.log(tabId);
+
         if(videoQueueHelper.getQueueSize(tabId) > 0) {
             // -> If the ended video has same URL has the one in the front of the queue
             // then remove it and play the next. If there is no next, then do nothing.
